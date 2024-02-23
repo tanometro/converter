@@ -5,7 +5,7 @@ const convertMeasures = async () => {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': '0e21fdf111mshfc7b56e4ddf9af8p104953jsn71950e132a0c',
+            'X-RapidAPI-Key': 'eliminada momentaneamente',
             'X-RapidAPI-Host': 'community-neutrino-currency-conversion.p.rapidapi.com'
         },
         body: new URLSearchParams({
