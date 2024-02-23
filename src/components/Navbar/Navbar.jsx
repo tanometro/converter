@@ -4,7 +4,7 @@ import styles from './Navbar.module.css'
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
-        <img src='/icon.svg' className={styles.isotipo} alt='App icon'/>
+        <img src='/Icon.svg' className={styles.isotipo} alt='App icon'/>
         <h1 className={styles.logotipo} >unit converter</h1>
     </div>
   )
