@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    height: 3em;
+}
+
+.isotipo {
+    width: 32px;
+}
+
+.logotipo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #2E0039;
+    font-weight: 900;
+}
+
