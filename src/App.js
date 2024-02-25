@@ -1,8 +1,7 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Convert from './components/Conversor/Convert';
 import { useSelector } from 'react-redux';
-import Saved from './components/Saved/Saved';
+import { Route, Routes } from 'react-router-dom';
+import Landingpage from './pages/Landingpage/Landingpage';
 
 function App() {
   const likes = useSelector(state => state.likes);
@@ -22,23 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className='body'>
-        <Navbar/>
-        <div className='conversor'>
-          <Convert/>
-        </div>
-        <div>
-          <span className='savedSpan'>saved</span>
-        </div>
-        <div className='saved'>
-          {
-             likesFromLocalStorage.map((like) => (
-              <Saved key={like.id} id={like.id} valueInput={like.valueInput} fromValue={like.from} toValue={like.to} resultValue={like.result} />
-            ))
-          }
-        </div>
-      </div>
-     
+      <Routes>
+        <Route path='/' element={<Landingpage/>}/>
+      </Routes>
     </div>
   );
 }
