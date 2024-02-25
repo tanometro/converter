@@ -6,6 +6,8 @@ import { LuArrowLeftRight } from "react-icons/lu";
 import { useDispatch } from 'react-redux';
 import { addLike } from '../../features/likes/likesSlice';
 import {v4 as uuid} from 'uuid';
+import PrimaryInput from '../Inputs/PrimaryInput';
+import PrimarySelect from '../Inputs/PrimarySelect';
 
 function Convert() {
     const [selected, setSelected] = useState({ from: 'kilometers', to: 'miles', result: '' });    
@@ -83,7 +85,6 @@ function Convert() {
         dispatch(addLike(toLike));
     }
 
-
   return (
     <div className={styles.conversor}>
         <div>
@@ -91,19 +92,11 @@ function Convert() {
         </div>
             <div className={styles.divConverter} >
                 <div>
-                    <select name='relation' onChange={handleChange} value={selected.id} >
-                        {
-                            Options.map((option,) => (
-                                <option value={option.id} key={option.id}>
-                                    <h3>{`${option.from} -> ${option.to}`}</h3>
-                                </option>
-                            ))
-                        }
-                    </select>
+                    <PrimarySelect name='relation' onChangeFunction={handleChange} value={selected.id} array={Options}/>
                     <LuArrowLeftRight color='white' className={styles.convertIcon} onClick={() => invert()}/>
                 </div>
                 <div>
-                    <input placeholder='0' value={valueInput} onChange={handleValue} name='valueInput'/>
+                    <PrimaryInput placeholder='0' value={valueInput} onChangeFunction={handleValue} name='valueInput'/>
                     <span className={styles.textValue}>{selected.from}</span>
                 </div>
             </div>
